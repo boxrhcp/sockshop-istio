@@ -109,7 +109,24 @@ spec:
   gateways:
   - sockshop-gateway
   http:
-  - route:
+  - name: user
+    match:
+    - uri: 
+        prefix: /login
+    - uri: 
+        prefix: /register
+    - uri: 
+        prefix: /customers
+    - uri: 
+        prefix: /cards
+    - uri: 
+        prefix: /addresses
+    route:
+    - destination:
+        host: user
+        subset: v1
+  - name: front-end
+    route:
     - destination:
         host: front-end
         subset: v1
