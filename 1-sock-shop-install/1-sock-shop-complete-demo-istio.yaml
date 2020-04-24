@@ -84,7 +84,7 @@ spec:
         - name: ISTIO_METAJSON_LABELS
           value: |
             {"name":"carts-db","version":"v1"}
-        image: gcr.io/istio-release/proxyv2:release-1.0-latest-daily
+        image: gcr.io/istio-release/proxyv2:release-1.3-latest-daily
         imagePullPolicy: IfNotPresent
         name: istio-proxy
         ports:
@@ -119,7 +119,7 @@ spec:
         - "27017"
         - -d
         - ""
-        image: gcr.io/istio-release/proxy_init:release-1.0-latest-daily
+        image: gcr.io/istio-release/proxy_init:release-1.3-latest-daily
         imagePullPolicy: IfNotPresent
         name: istio-init
         resources: {}
@@ -185,7 +185,7 @@ spec:
         - name: JAVA_OPTS
           value: -Xms64m -Xmx128m -XX:PermSize=32m -XX:MaxPermSize=64m -XX:+UseG1GC
             -Djava.security.egd=file:/dev/urandom
-        image: weaveworksdemos/carts:0.4.8
+        image: weaveworksdemos/carts:latest
         name: carts
         ports:
         - containerPort: 80
@@ -249,7 +249,7 @@ spec:
         - name: ISTIO_METAJSON_LABELS
           value: |
             {"name":"carts","version":"v1"}
-        image: gcr.io/istio-release/proxyv2:release-1.0-latest-daily
+        image: gcr.io/istio-release/proxyv2:release-1.3-latest-daily
         imagePullPolicy: IfNotPresent
         name: istio-proxy
         ports:
@@ -284,7 +284,7 @@ spec:
         - "80"
         - -d
         - ""
-        image: gcr.io/istio-release/proxy_init:release-1.0-latest-daily
+        image: gcr.io/istio-release/proxy_init:release-1.3-latest-daily
         imagePullPolicy: IfNotPresent
         name: istio-init
         resources: {}
@@ -350,7 +350,7 @@ spec:
           value: fake_password
         - name: MYSQL_DATABASE
           value: socksdb
-        image: weaveworksdemos/catalogue-db:0.3.0
+        image: weaveworksdemos/catalogue-db:latest
         name: catalogue-db
         ports:
         - containerPort: 3306
@@ -403,7 +403,7 @@ spec:
         - name: ISTIO_METAJSON_LABELS
           value: |
             {"name":"catalogue-db","version":"v1"}
-        image: gcr.io/istio-release/proxyv2:release-1.0-latest-daily
+        image: gcr.io/istio-release/proxyv2:release-1.3-latest-daily
         imagePullPolicy: IfNotPresent
         name: istio-proxy
         ports:
@@ -438,7 +438,7 @@ spec:
         - "3306"
         - -d
         - ""
-        image: gcr.io/istio-release/proxy_init:release-1.0-latest-daily
+        image: gcr.io/istio-release/proxy_init:release-1.3-latest-daily
         imagePullPolicy: IfNotPresent
         name: istio-init
         resources: {}
@@ -498,7 +498,7 @@ spec:
         version: v1
     spec:
       containers:
-      - image: weaveworksdemos/catalogue:0.3.5
+      - image: weaveworksdemos/catalogue:latest
         name: catalogue
         ports:
         - containerPort: 80
@@ -559,7 +559,7 @@ spec:
         - name: ISTIO_METAJSON_LABELS
           value: |
             {"name":"catalogue","version":"v1"}
-        image: gcr.io/istio-release/proxyv2:release-1.0-latest-daily
+        image: gcr.io/istio-release/proxyv2:release-1.3-latest-daily
         imagePullPolicy: IfNotPresent
         name: istio-proxy
         ports:
@@ -594,7 +594,7 @@ spec:
         - "80"
         - -d
         - ""
-        image: gcr.io/istio-release/proxy_init:release-1.0-latest-daily
+        image: gcr.io/istio-release/proxy_init:release-1.3-latest-daily
         imagePullPolicy: IfNotPresent
         name: istio-init
         resources: {}
@@ -650,7 +650,7 @@ spec:
         version: v1
     spec:
       containers:
-      - image: weaveworksdemos/front-end:0.3.12
+      - image: weaveworksdemos/front-end:latest
         name: front-end
         ports:
         - containerPort: 8079
@@ -712,7 +712,7 @@ spec:
         - name: ISTIO_METAJSON_LABELS
           value: |
             {"name":"front-end","version":"v1"}
-        image: gcr.io/istio-release/proxyv2:release-1.0-latest-daily
+        image: gcr.io/istio-release/proxyv2:release-1.3-latest-daily
         imagePullPolicy: IfNotPresent
         name: istio-proxy
         ports:
@@ -747,7 +747,7 @@ spec:
         - "8079"
         - -d
         - ""
-        image: gcr.io/istio-release/proxy_init:release-1.0-latest-daily
+        image: gcr.io/istio-release/proxy_init:release-1.3-latest-daily
         imagePullPolicy: IfNotPresent
         name: istio-init
         resources: {}
@@ -871,7 +871,7 @@ spec:
         - name: ISTIO_METAJSON_LABELS
           value: |
             {"name":"orders-db","version":"v1"}
-        image: gcr.io/istio-release/proxyv2:release-1.0-latest-daily
+        image: gcr.io/istio-release/proxyv2:release-1.3-latest-daily
         imagePullPolicy: IfNotPresent
         name: istio-proxy
         ports:
@@ -906,7 +906,7 @@ spec:
         - "27017"
         - -d
         - ""
-        image: gcr.io/istio-release/proxy_init:release-1.0-latest-daily
+        image: gcr.io/istio-release/proxy_init:release-1.3-latest-daily
         imagePullPolicy: IfNotPresent
         name: istio-init
         resources: {}
@@ -972,7 +972,7 @@ spec:
         - name: JAVA_OPTS
           value: -Xms64m -Xmx128m -XX:PermSize=32m -XX:MaxPermSize=64m -XX:+UseG1GC
             -Djava.security.egd=file:/dev/urandom
-        image: weaveworksdemos/orders:0.4.7
+        image: weaveworksdemos/orders:latest
         name: orders
         ports:
         - containerPort: 80
@@ -1036,7 +1036,7 @@ spec:
         - name: ISTIO_METAJSON_LABELS
           value: |
             {"name":"orders","version":"v1"}
-        image: gcr.io/istio-release/proxyv2:release-1.0-latest-daily
+        image: gcr.io/istio-release/proxyv2:release-1.3-latest-daily
         imagePullPolicy: IfNotPresent
         name: istio-proxy
         ports:
@@ -1071,7 +1071,7 @@ spec:
         - "80"
         - -d
         - ""
-        image: gcr.io/istio-release/proxy_init:release-1.0-latest-daily
+        image: gcr.io/istio-release/proxy_init:release-1.3-latest-daily
         imagePullPolicy: IfNotPresent
         name: istio-init
         resources: {}
@@ -1132,7 +1132,7 @@ spec:
         version: v1
     spec:
       containers:
-      - image: weaveworksdemos/payment:0.4.3
+      - image: weaveworksdemos/payment:latest
         name: payment
         ports:
         - containerPort: 80
@@ -1193,7 +1193,7 @@ spec:
         - name: ISTIO_METAJSON_LABELS
           value: |
             {"name":"payment","version":"v1"}
-        image: gcr.io/istio-release/proxyv2:release-1.0-latest-daily
+        image: gcr.io/istio-release/proxyv2:release-1.3-latest-daily
         imagePullPolicy: IfNotPresent
         name: istio-proxy
         ports:
@@ -1228,7 +1228,7 @@ spec:
         - "80"
         - -d
         - ""
-        image: gcr.io/istio-release/proxy_init:release-1.0-latest-daily
+        image: gcr.io/istio-release/proxy_init:release-1.3-latest-daily
         imagePullPolicy: IfNotPresent
         name: istio-init
         resources: {}
@@ -1286,7 +1286,7 @@ spec:
         version: v1
     spec:
       containers:
-      - image: weaveworksdemos/queue-master:0.3.1
+      - image: weaveworksdemos/queue-master:latest
         name: queue-master
         ports:
         - containerPort: 80
@@ -1338,7 +1338,7 @@ spec:
         - name: ISTIO_METAJSON_LABELS
           value: |
             {"name":"queue-master","version":"v1"}
-        image: gcr.io/istio-release/proxyv2:release-1.0-latest-daily
+        image: gcr.io/istio-release/proxyv2:release-1.3-latest-daily
         imagePullPolicy: IfNotPresent
         name: istio-proxy
         ports:
@@ -1373,7 +1373,7 @@ spec:
         - "80"
         - -d
         - ""
-        image: gcr.io/istio-release/proxy_init:release-1.0-latest-daily
+        image: gcr.io/istio-release/proxy_init:release-1.3-latest-daily
         imagePullPolicy: IfNotPresent
         name: istio-init
         resources: {}
@@ -1495,7 +1495,7 @@ spec:
         - name: ISTIO_METAJSON_LABELS
           value: |
             {"name":"rabbitmq","version":"v1"}
-        image: gcr.io/istio-release/proxyv2:release-1.0-latest-daily
+        image: gcr.io/istio-release/proxyv2:release-1.3-latest-daily
         imagePullPolicy: IfNotPresent
         name: istio-proxy
         ports:
@@ -1530,7 +1530,7 @@ spec:
         - "5672"
         - -d
         - ""
-        image: gcr.io/istio-release/proxy_init:release-1.0-latest-daily
+        image: gcr.io/istio-release/proxy_init:release-1.3-latest-daily
         imagePullPolicy: IfNotPresent
         name: istio-init
         resources: {}
@@ -1596,7 +1596,7 @@ spec:
         - name: JAVA_OPTS
           value: -Xms64m -Xmx128m -XX:PermSize=32m -XX:MaxPermSize=64m -XX:+UseG1GC
             -Djava.security.egd=file:/dev/urandom
-        image: weaveworksdemos/shipping:0.4.8
+        image: weaveworksdemos/shipping:latest
         name: shipping
         ports:
         - containerPort: 80
@@ -1660,7 +1660,7 @@ spec:
         - name: ISTIO_METAJSON_LABELS
           value: |
             {"name":"shipping","version":"v1"}
-        image: gcr.io/istio-release/proxyv2:release-1.0-latest-daily
+        image: gcr.io/istio-release/proxyv2:release-1.3-latest-daily
         imagePullPolicy: IfNotPresent
         name: istio-proxy
         ports:
@@ -1695,7 +1695,7 @@ spec:
         - "80"
         - -d
         - ""
-        image: gcr.io/istio-release/proxy_init:release-1.0-latest-daily
+        image: gcr.io/istio-release/proxy_init:release-1.3-latest-daily
         imagePullPolicy: IfNotPresent
         name: istio-init
         resources: {}
@@ -1756,7 +1756,7 @@ spec:
         version: v1
     spec:
       containers:
-      - image: weaveworksdemos/user-db:0.4.0
+      - image: weaveworksdemos/user-db:latest
         name: user-db
         ports:
         - containerPort: 27017
@@ -1821,7 +1821,7 @@ spec:
         - name: ISTIO_METAJSON_LABELS
           value: |
             {"name":"user-db","version":"v1"}
-        image: gcr.io/istio-release/proxyv2:release-1.0-latest-daily
+        image: gcr.io/istio-release/proxyv2:release-1.3-latest-daily
         imagePullPolicy: IfNotPresent
         name: istio-proxy
         ports:
@@ -1856,7 +1856,7 @@ spec:
         - "27017"
         - -d
         - ""
-        image: gcr.io/istio-release/proxy_init:release-1.0-latest-daily
+        image: gcr.io/istio-release/proxy_init:release-1.3-latest-daily
         imagePullPolicy: IfNotPresent
         name: istio-init
         resources: {}
@@ -1919,7 +1919,7 @@ spec:
       - env:
         - name: MONGO_HOST
           value: user-db:27017
-        image: weaveworksdemos/user:0.4.7
+        image: weaveworksdemos/user:latest
         name: user
         ports:
         - containerPort: 80
@@ -1980,7 +1980,7 @@ spec:
         - name: ISTIO_METAJSON_LABELS
           value: |
             {"name":"user","version":"v1"}
-        image: gcr.io/istio-release/proxyv2:release-1.0-latest-daily
+        image: gcr.io/istio-release/proxyv2:release-1.3-latest-daily
         imagePullPolicy: IfNotPresent
         name: istio-proxy
         ports:
@@ -2015,7 +2015,7 @@ spec:
         - "80"
         - -d
         - ""
-        image: gcr.io/istio-release/proxy_init:release-1.0-latest-daily
+        image: gcr.io/istio-release/proxy_init:release-1.3-latest-daily
         imagePullPolicy: IfNotPresent
         name: istio-init
         resources: {}

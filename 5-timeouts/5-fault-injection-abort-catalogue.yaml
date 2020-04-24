@@ -8,7 +8,7 @@ spec:
   http:
   - fault:
       abort:
-        httpStatus: 500
+        httpStatus: 404
         percent: 100
     route:
     - destination:
