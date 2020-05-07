@@ -8,10 +8,17 @@ spec:
   - user
   http:
   - fault:
-      delay:
-        fixedDelay: 30s
+      abort:
+        httpStatus: 500
         percent: 100
+    match: 
+      - uri: 
+          prefix: /cards
     route:
+    - destination:
+        host: user
+        subset: v1
+  - route:
     - destination:
         host: user
         subset: v1

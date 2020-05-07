@@ -1239,7 +1239,7 @@ spec:
         version: v1
     spec:
       containers:
-      - image: weaveworksdemos/payment:latest
+      - image: eu.gcr.io/optimum-mode-272714/payment:latest
         name: payment
         ports:
         - containerPort: 80
@@ -1919,7 +1919,7 @@ spec:
         version: v1
     spec:
       containers:
-      - image: weaveworksdemos/user-db:latest
+      - image: eu.gcr.io/optimum-mode-272714/user-db:latest
         name: user-db
         ports:
         - containerPort: 27017
@@ -2098,7 +2098,7 @@ spec:
       - env:
         - name: MONGO_HOST
           value: user-db:27017
-        image: weaveworksdemos/user:latest
+        image: eu.gcr.io/optimum-mode-272714/user:latest
         name: user
         ports:
         - containerPort: 80
