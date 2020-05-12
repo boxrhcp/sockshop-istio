@@ -135,6 +135,7 @@ spec:
           privileged: true
       nodeSelector:
         beta.kubernetes.io/os: linux
+        benchmark: "false"
       volumes:
       - emptyDir:
           medium: Memory
@@ -316,6 +317,7 @@ spec:
           privileged: true
       nodeSelector:
         beta.kubernetes.io/os: linux
+        benchmark: "false"
       volumes:
       - emptyDir:
           medium: Memory
@@ -484,6 +486,7 @@ spec:
           privileged: true
       nodeSelector:
         beta.kubernetes.io/os: linux
+        benchmark: "false"
       volumes:
       - emptyDir:
           medium: Memory
@@ -654,6 +657,7 @@ spec:
           privileged: true
       nodeSelector:
         beta.kubernetes.io/os: linux
+        benchmark: "false"
       volumes:
       - emptyDir:
           medium: Memory
@@ -715,7 +719,8 @@ spec:
         version: v1
     spec:
       containers:
-      - image: weaveworksdemos/front-end:latest
+      - image: eu.gcr.io/optimum-mode-272714/front-end:latest
+        imagePullPolicy: Always
         name: front-end
         ports:
         - containerPort: 8079
@@ -823,6 +828,7 @@ spec:
           privileged: true
       nodeSelector:
         beta.kubernetes.io/os: linux
+        benchmark: "false"
       volumes:
       - emptyDir:
           medium: Memory
@@ -996,6 +1002,7 @@ spec:
           privileged: true
       nodeSelector:
         beta.kubernetes.io/os: linux
+        benchmark: "true"
       volumes:
       - emptyDir:
           medium: Memory
@@ -1065,7 +1072,9 @@ spec:
         - name: JAVA_OPTS
           value: -Xms64m -Xmx128m -XX:PermSize=32m -XX:MaxPermSize=64m -XX:+UseG1GC
             -Djava.security.egd=file:/dev/urandom
-        image: weaveworksdemos/orders:latest
+        #image: weaveworksdemos/orders:latest
+        image: eu.gcr.io/optimum-mode-272714/orders:latest
+        imagePullPolicy: Always
         name: orders
         ports:
         - containerPort: 80
@@ -1175,6 +1184,7 @@ spec:
           privileged: true
       nodeSelector:
         beta.kubernetes.io/os: linux
+        benchmark: "true"
       volumes:
       - emptyDir:
           medium: Memory
@@ -1239,7 +1249,9 @@ spec:
         version: v1
     spec:
       containers:
+      #- image: weaveworksdemos/payment:latest
       - image: eu.gcr.io/optimum-mode-272714/payment:latest
+        imagePullPolicy: Always
         name: payment
         ports:
         - containerPort: 80
@@ -1346,6 +1358,7 @@ spec:
           privileged: true
       nodeSelector:
         beta.kubernetes.io/os: linux
+        benchmark: "false"
       volumes:
       - emptyDir:
           medium: Memory
@@ -1505,6 +1518,7 @@ spec:
           privileged: true
       nodeSelector:
         beta.kubernetes.io/os: linux
+        benchmark: "false"
       volumes:
       - emptyDir:
           medium: Memory
@@ -1676,6 +1690,7 @@ spec:
           privileged: true
       nodeSelector:
         beta.kubernetes.io/os: linux
+        benchmark: "false"
       volumes:
       - emptyDir:
           medium: Memory
@@ -1855,6 +1870,7 @@ spec:
           privileged: true
       nodeSelector:
         beta.kubernetes.io/os: linux
+        benchmark: "false"
       volumes:
       - emptyDir:
           medium: Memory
@@ -1919,7 +1935,9 @@ spec:
         version: v1
     spec:
       containers:
-      - image: eu.gcr.io/optimum-mode-272714/user-db:latest
+      #- image: eu.gcr.io/optimum-mode-272714/user-db:latest
+      - image: weaveworksdemos/user-db:latest
+        imagePullPolicy: Always
         name: user-db
         ports:
         - containerPort: 27017
@@ -2030,6 +2048,7 @@ spec:
           privileged: true
       nodeSelector:
         beta.kubernetes.io/os: linux
+        benchmark: "false"
       volumes:
       - emptyDir:
           medium: Memory
@@ -2098,7 +2117,9 @@ spec:
       - env:
         - name: MONGO_HOST
           value: user-db:27017
-        image: eu.gcr.io/optimum-mode-272714/user:latest
+        #image: eu.gcr.io/optimum-mode-272714/user:latest
+        image: weaveworksdemos/user:latest
+        imagePullPolicy: Always
         name: user
         ports:
         - containerPort: 80
@@ -2205,6 +2226,7 @@ spec:
           privileged: true
       nodeSelector:
         beta.kubernetes.io/os: linux
+        benchmark: "false"
       volumes:
       - emptyDir:
           medium: Memory
