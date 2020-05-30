@@ -27,6 +27,31 @@ spec:
   gateways:
   - sockshop-gateway
   http:
+  - name: carts
+    match:
+    - uri:
+        prefix: /carts
+    route:
+    - destination:
+        host: carts
+  - name: orders
+    match:
+    - uri:
+        prefix: /orders
+    route:
+    - destination:
+        host: orders
+  - name: user
+    match:
+    - uri:
+        prefix: /customers
+    - uri:
+        prefix: /addresses
+    - uri:
+        prefix: /cards
+    route:
+    - destination:
+        host: user
   - name: front-end
     route:
     - destination:
