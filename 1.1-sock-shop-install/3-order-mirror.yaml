@@ -31,7 +31,7 @@ spec:
           value: -Xms64m -Xmx128m -XX:PermSize=32m -XX:MaxPermSize=64m -XX:+UseG1GC
             -Djava.security.egd=file:/dev/urandom
         #image: weaveworksdemos/orders:latest
-        image: eu.gcr.io/optimum-mode-272714/orders:estable
+        image: eu.gcr.io/optimum-mode-272714/orders:improvement
         imagePullPolicy: Always
         name: orders
         ports:
@@ -317,6 +317,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
   name: orders-destination
+  namespace: sock-shop
 spec:
   host: orders
   subsets:
@@ -350,8 +351,8 @@ spec:
     - uri:
         prefix: /orders
       headers:
-        app-version:
-          exact: "v1"
+        x-version:
+          exact: v1
     route:
     - destination:
         host: orders
@@ -361,8 +362,8 @@ spec:
     - uri:
         prefix: /orders
       headers:
-        app-version:
-          exact: "v2"
+        x-version:
+          exact: v2
     route:
     - destination:
         host: orders
