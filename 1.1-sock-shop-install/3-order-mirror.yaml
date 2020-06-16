@@ -31,7 +31,7 @@ spec:
           value: -Xms64m -Xmx128m -XX:PermSize=32m -XX:MaxPermSize=64m -XX:+UseG1GC
             -Djava.security.egd=file:/dev/urandom
         #image: weaveworksdemos/orders:latest
-        image: eu.gcr.io/optimum-mode-272714/orders:improvement
+        image: eu.gcr.io/optimum-mode-272714/orders:payload-long
         imagePullPolicy: Always
         name: orders
         ports:
